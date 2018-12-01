@@ -1,0 +1,16 @@
+version: '3'
+services: 
+  db:
+    image: mysql:5.7
+    env_file: .env
+  node:
+    depends_on:
+      - db
+    build:
+      dockerfile: '.docker/node/Dockerfile'
+      context: ./
+    volumes:
+      - ./:/var/www
+    ports:
+      - 3000:3000
+    env_file: .env
