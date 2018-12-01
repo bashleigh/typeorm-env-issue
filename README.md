@@ -53,7 +53,7 @@ I also added speach marks around the `TYPEORM_MIGRATIONS` env in the env file bu
 ```
 TYPEORM_MIGRATIONS="src/migrations/*.{ts,js}"
 ```
-The result is `migrations: ['"src/migrations/*.{ts', 'js}"']`.
+The result is `migrations: ['"src/migrations/*.{ts', 'js}"']`. (Don't forget trying this requires the container to be re-instanced with the new envs `docker-compose up -d --build --force-recreate node`)
 
 
 > Let me know if there's anything else I can do! 
