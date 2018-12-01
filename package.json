@@ -14,7 +14,10 @@
     "test": "jest",
     "test:cov": "jest --coverage",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "webpack": "webpack --config webpack.config.js"
+    "webpack": "webpack --config webpack.config.js",
+    "env-setup": "test -e .env || cp .env.dist .env",
+    "setup": "yarn env-setup && docker-compose up -d",
+    "ash": "docker-compose exec node ash"
   },
   "dependencies": {
     "@nestjs/common": "^5.0.0",
